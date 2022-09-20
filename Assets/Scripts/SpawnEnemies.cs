@@ -5,8 +5,9 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     private float contaTempoOnda;
-    public float tempoOnda = 10;
+    public float tempoOnda = 15;
     public int maxInimigosOnda;
+    public int onda = 1;
 
     public GameObject enemie;
 
@@ -28,7 +29,9 @@ public class SpawnEnemies : MonoBehaviour
         if(contaTempoOnda >= tempoOnda)
         {
             RandomSpawnEnemies();
+            onda++;
             contaTempoOnda = 0;
+            maxInimigosOnda++;
         }
     }
 
@@ -36,7 +39,7 @@ public class SpawnEnemies : MonoBehaviour
     {
         int rand = Random.Range(1, maxInimigosOnda);
 
-        for(int i = 1; i <= maxInimigosOnda; i++)
+        for(int i = 1; i <= rand; i++)
         {
             Instantiate(enemie, transform.position, Quaternion.identity);
         }

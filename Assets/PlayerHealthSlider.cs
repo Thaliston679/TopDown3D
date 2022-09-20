@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerHealthSlider : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
