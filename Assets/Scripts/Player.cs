@@ -10,8 +10,19 @@ public class Player : MonoBehaviour
     public GameObject inimigo;
     public bool atacando = false;
     public GameObject areaAtk;
+
+    //Poderes
+    public GameObject[] poder;
+    public bool[] poderUsado;
+    public float[] poderResp;
+    public ParticleSystem[] particulaPoder;
+
     void Start()
     {
+        for(int i = 0; i < poderUsado.Length; i++)
+        {
+            poderUsado[i] = false;
+        }
         agent = GetComponent<NavMeshAgent>();
         destino = transform.position;
     }
@@ -21,6 +32,8 @@ public class Player : MonoBehaviour
     {
         Mover();
         Atacar();
+        Poderes();
+        PauseGame();
     }
 
     void Mover()
@@ -85,6 +98,33 @@ public class Player : MonoBehaviour
         
     }
 
+    public void Poderes()
+    {
+        if(poderUsado[0] == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                poder[0].SetActive(true);
+                particulaPoder[0].Play();
+                poderUsado[0] = true;
+            }
+        }
+        else
+        {
+            poderResp[0] += Time.deltaTime;
+            if(poderResp[0] >= 4)
+            {
+                poder[0].SetActive(false);
+                particulaPoder[0].Stop();
+            }
+            if(poderResp[0] >= 10)
+            {
+                poderResp[0] = 0;
+                poderUsado[0] = false;
+            }
+        }
+    }
+
     public void AtivarAtk()
     {
         areaAtk.SetActive(true);
@@ -93,5 +133,21 @@ public class Player : MonoBehaviour
     public void DesativarAtk()
     {
         areaAtk.SetActive(false);
+    }
+
+    public void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+            }
+
+        }
     }
 }
