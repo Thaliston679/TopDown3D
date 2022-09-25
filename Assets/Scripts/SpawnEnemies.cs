@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     private float contaTempoOnda;
-    public float tempoOnda = 10;
+    public float tempoOnda = 15;
     public int maxInimigosOnda;
     public int onda = 1;
 
@@ -13,7 +13,7 @@ public class SpawnEnemies : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,9 +29,9 @@ public class SpawnEnemies : MonoBehaviour
         if(contaTempoOnda >= tempoOnda)
         {
             RandomSpawnEnemies();
+            onda++;
             contaTempoOnda = 0;
             maxInimigosOnda++;
-            onda++;
         }
     }
 
