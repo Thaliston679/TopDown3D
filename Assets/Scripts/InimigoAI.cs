@@ -8,7 +8,8 @@ public class InimigoAI : MonoBehaviour
 {
     private GameObject player;
     private NavMeshAgent agent;
-    public int vida = 5;
+    public float vida;
+    public float vidaMax;
     public Image barHP;
     [Range(0, 1)]
     public float barra;
@@ -16,6 +17,7 @@ public class InimigoAI : MonoBehaviour
     public GameObject particleDestroy;
     void Start()
     {
+        vida = vidaMax;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -24,6 +26,12 @@ public class InimigoAI : MonoBehaviour
     void Update()
     {
         agent.SetDestination(player.transform.position);
+        BarraHP();
+    }
+
+    public void BarraHP()
+    {
+        barra = 1 / (vidaMax/vida);
         barHP.rectTransform.localScale = new(barra, 1, 1);
     }
 
