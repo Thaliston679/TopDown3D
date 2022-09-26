@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1335223051}
   - component: {fileID: 1335223050}
   - component: {fileID: 1335223049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AreaAtk
   m_TagString: AreaAtk
   m_Icon: {fileID: 0}
@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 1599739147}
   - component: {fileID: 1599739144}
   - component: {fileID: 1599739143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hab1
-  m_TagString: AreaAtk
+  m_TagString: AreaAtkContinuo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChuvaDeCenoura
       objectReference: {fileID: 0}
+    - target: {fileID: 3989491632124942650, guid: c6e3b35ec67931440bd4939bf2bd6819, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3989491632124942651, guid: c6e3b35ec67931440bd4939bf2bd6819, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -564,6 +568,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3989491632124942652, guid: c6e3b35ec67931440bd4939bf2bd6819, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989491632124942652, guid: c6e3b35ec67931440bd4939bf2bd6819, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8469494145858465668, guid: 941bdc1730157f94fbf7227b287d88ae, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e3b35ec67931440bd4939bf2bd6819, type: 3}
 --- !u!4 &4805384 stripped
