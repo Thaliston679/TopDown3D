@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inimigo
   - AreaAtk
+  - AreaAtkContinuo
   layers:
   - Default
   - TransparentFX

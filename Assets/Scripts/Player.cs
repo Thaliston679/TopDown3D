@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     void Mover()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             inimigo = null;
 
@@ -69,8 +69,7 @@ public class Player : MonoBehaviour
         {
             Vector3 mousepoint = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mousepoint);
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            if (Physics.Raycast(castPoint, out RaycastHit hit, Mathf.Infinity))
             {
                 if (hit.collider.gameObject.CompareTag("Inimigo"))
                 {
@@ -137,6 +136,7 @@ public class Player : MonoBehaviour
 
     public void PauseGame()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(Time.timeScale == 0)
@@ -149,5 +149,6 @@ public class Player : MonoBehaviour
             }
 
         }
+        */
     }
 }

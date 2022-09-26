@@ -13,6 +13,9 @@ public class InimigoAI : MonoBehaviour
     public Image barHP;
     [Range(0, 1)]
     public float barra;
+    //Para habilidades de dano contínuo
+    public bool levarDano = true;
+    public float tempoInvulneravel;
 
     public GameObject particleDestroy;
     void Start()
@@ -27,6 +30,7 @@ public class InimigoAI : MonoBehaviour
     {
         agent.SetDestination(player.transform.position);
         BarraHP();
+        PodeLevarDano();
     }
 
     public void BarraHP()
@@ -34,7 +38,7 @@ public class InimigoAI : MonoBehaviour
         barra = 1 / (vidaMax/vida);
         barHP.rectTransform.localScale = new(barra, 1, 1);
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AreaAtk"))
@@ -45,6 +49,35 @@ public class InimigoAI : MonoBehaviour
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
+        }
+    }
+    
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("AreaAtkContinuo") && levarDano)
+        {
+            levarDano = false;
+            vida--;
+            if (vida <= 0)
+            {
+                Instantiate(particleDestroy, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    public void PodeLevarDano()
+    {
+        if (!levarDano)
+        {
+            tempoInvulneravel += Time.deltaTime;
+        }
+
+        if(tempoInvulneravel >= 1)
+        {
+            levarDano = true;
+            tempoInvulneravel = 0;
         }
     }
 }
