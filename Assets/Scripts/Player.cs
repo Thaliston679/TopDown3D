@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         {
             Vector3 mousepoint = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mousepoint);
-            if (Physics.Raycast(castPoint, out RaycastHit hit, Mathf.Infinity))
+            if (Physics.Raycast(castPoint, out RaycastHit hit, Mathf.Infinity, 7))
             {
                 if (hit.collider.gameObject.CompareTag("Inimigo"))
                 {
