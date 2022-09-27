@@ -7,7 +7,7 @@ public class ControlaCena : MonoBehaviour
 {
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("Cena"));
+
     }
 
     // Update is called once per frame
