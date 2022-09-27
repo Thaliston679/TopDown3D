@@ -1602,13 +1602,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4805385, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1335223048, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1599739142, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 538370556586270313, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_Name

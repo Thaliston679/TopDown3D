@@ -103,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4291959805003283073}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 51.4713, y: 3.2176843, z: 41.678833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -129,6 +129,8 @@ MonoBehaviour:
   vidaMax: 3
   barHP: {fileID: 2352288888151826551}
   barra: 0
+  levarDano: 1
+  tempoInvulneravel: 0
   particleDestroy: {fileID: 5145368665894224478, guid: 2ba8ce651e7adbc459002c5c8a02525f, type: 3}
 --- !u!136 &2366993695166974804
 CapsuleCollider:
