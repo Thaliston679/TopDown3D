@@ -6,6 +6,8 @@ public class GerenciadorJogo : MonoBehaviour
 {
     public int minhaCena;
     private ControlaCena controlaCena;
+    public int inimigosDerrotados;
+    public int inimigosTotais;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +30,10 @@ public class GerenciadorJogo : MonoBehaviour
         {
             controlaCena.Cena(5);
         }
+    }
+
+    public ControlaCena GetControlaCena()
+    {
+        return controlaCena;
     }
 }

@@ -5,16 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlaCena : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    int cenaAtual;
 
     public void Cena(int a)
     {
@@ -29,7 +20,16 @@ public class ControlaCena : MonoBehaviour
 
     public void ContinuarJogo()
     {
-        int cenaAtual = PlayerPrefs.GetInt("Cena");
+        if(PlayerPrefs.HasKey("Cena"))
+        {
+            cenaAtual = PlayerPrefs.GetInt("Cena");
+        }
+        else
+        {
+            cenaAtual = 1;
+            PlayerPrefs.SetInt("Cena", 1);
+        }
+
         SceneManager.LoadScene(cenaAtual);
     }
 }

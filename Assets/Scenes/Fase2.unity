@@ -336,6 +336,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7367100738217245761, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
   m_PrefabInstance: {fileID: 1604408251}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &461971507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461971508}
+  m_Layer: 0
+  m_Name: Spawn01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461971508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461971507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2115835697}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560309365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1041,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe013854f434b4b4bb27dce02e82b261, type: 3}
+--- !u!114 &1033995075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3546269583809372136, guid: fe013854f434b4b4bb27dce02e82b261, type: 3}
+  m_PrefabInstance: {fileID: 1033995074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa4cde06c1905749951c588d457a0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1096507508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1973,7 +2015,8 @@ Transform:
   m_LocalPosition: {x: 133.5, y: 1.755, z: 62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 461971508}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1989,7 +2032,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda5e6ac282acec46b2ce4bf44df262e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoOnda: 10
-  maxInimigosOnda: 3
+  tempoOnda: 12
+  inimigosOnda: 3
   onda: 1
+  maxOndaLevel: 20
+  fase: 2
+  spawnPosition:
+  - {fileID: 461971508}
   enemie: {fileID: 4291959805003283073, guid: 2096467a192163a449910974e8aa5ae4, type: 3}
+  GJ: {fileID: 1033995075}

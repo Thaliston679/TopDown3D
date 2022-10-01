@@ -16,6 +16,7 @@ public class InimigoAI : MonoBehaviour
     //Para habilidades de dano contínuo
     public bool levarDano = true;
     public float tempoInvulneravel;
+    public GerenciadorJogo GJ;
 
     public GameObject particleDestroy;
     void Start()
@@ -23,6 +24,7 @@ public class InimigoAI : MonoBehaviour
         vida = vidaMax;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+        GJ = GameObject.FindGameObjectWithTag("GameController").GetComponent<GerenciadorJogo>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class InimigoAI : MonoBehaviour
             vida--;
             if(vida <= 0)
             {
+                GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
@@ -61,6 +64,7 @@ public class InimigoAI : MonoBehaviour
             vida--;
             if (vida <= 0)
             {
+                GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }

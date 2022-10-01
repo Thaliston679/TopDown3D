@@ -11,25 +11,26 @@ public class SpawnEnemies : MonoBehaviour
     public int maxOndaLevel;
     public int fase;
     public Transform[] spawnPosition;
-
     public GameObject enemie;
 
-    void Start()
-    {
-
-    }
+    public GerenciadorJogo GJ;
 
     // Update is called once per frame
     void Update()
     {
+        if (GJ.inimigosDerrotados >= GJ.inimigosTotais) InstaciaNovaOnda();
         ContadorTempoOnda();
+        ChecagemDeOndasPorLevel();
     }
 
     public void ContadorTempoOnda()
     {
         contaTempoOnda += Time.deltaTime;
+    }
 
-        if(contaTempoOnda >= tempoOnda)
+    public void InstaciaNovaOnda()
+    {
+        if (contaTempoOnda >= tempoOnda)
         {
             GeradorDeInimigos();
             onda++;
@@ -42,18 +43,18 @@ public class SpawnEnemies : MonoBehaviour
     {
         for(int i = 1; i <= inimigosOnda; i++)
         {
+            GJ.inimigosTotais++;
             Instantiate(enemie, transform.position, Quaternion.identity);
         }
     }
 
     public void ChecagemDeOndasPorLevel()
     {
-        switch (fase)
+        if(onda >= maxOndaLevel && GJ.minhaCena <= 2 && GJ.minhaCena > 0 && GJ.inimigosDerrotados >= GJ.inimigosTotais)
         {
-            case 1:
-
-                break;
-
+            GJ.minhaCena++;
+            PlayerPrefs.SetInt("Cena", GJ.minhaCena);
+            GJ.GetControlaCena().Cena(GJ.minhaCena);
         }
     }
 
