@@ -11,7 +11,7 @@ public class SpawnEnemies : MonoBehaviour
     public int maxOndaLevel;
     public int fase;
     public Transform[] spawnPosition;
-    public GameObject enemie;
+    public GameObject[] enemies;
 
     public GerenciadorJogo GJ;
 
@@ -30,12 +30,28 @@ public class SpawnEnemies : MonoBehaviour
 
     public void InstaciaNovaOnda()
     {
-        if (contaTempoOnda >= tempoOnda)
+        if (contaTempoOnda >= tempoOnda && onda < maxOndaLevel)
         {
-            GeradorDeInimigos();
+            GJ.inimigosTotais += inimigosOnda;
+            StartCoroutine(GeradorDeInimigosComTimer());
             onda++;
             contaTempoOnda = 0;
             inimigosOnda++;
+        }
+    }
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    /// 
+
+    IEnumerator GeradorDeInimigosComTimer()
+    {
+        for (int i = 1; i < inimigosOnda; i++)
+        {
+            Transform spawnRand = spawnPosition[Random.Range(0, spawnPosition.Length)];
+            GameObject enemie = RandomizadorInimigo();
+            Instantiate(enemie, spawnRand.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -43,10 +59,14 @@ public class SpawnEnemies : MonoBehaviour
     {
         for(int i = 1; i <= inimigosOnda; i++)
         {
+            GameObject enemie = RandomizadorInimigo();
             GJ.inimigosTotais++;
             Instantiate(enemie, transform.position, Quaternion.identity);
         }
     }
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
 
     public void ChecagemDeOndasPorLevel()
     {
@@ -55,6 +75,25 @@ public class SpawnEnemies : MonoBehaviour
             GJ.minhaCena++;
             PlayerPrefs.SetInt("Cena", GJ.minhaCena);
             GJ.GetControlaCena().Cena(GJ.minhaCena);
+        }
+    }
+
+    public GameObject RandomizadorInimigo()
+    {
+        if(onda > 20)
+        {
+            int rand = Random.Range(0, 3);
+            return enemies[rand];
+        }
+        else if(onda > 10)
+        {
+            int rand = Random.Range(0, 2);
+            return enemies[rand];
+        }
+        else
+        {
+            int rand = Random.Range(0, 1);
+            return enemies[rand];
         }
     }
 

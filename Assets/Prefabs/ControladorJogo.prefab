@@ -60,3 +60,4 @@ MonoBehaviour:
   minhaCena: 0
   inimigosDerrotados: 0
   inimigosTotais: 0
+  pausePainel: {fileID: 0}

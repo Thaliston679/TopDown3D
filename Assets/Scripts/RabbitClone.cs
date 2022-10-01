@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class RabbitClone : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Vector3 destino;
     public GameObject inimigo;
     public bool atacando = false;
     public GameObject areaAtk;
+    public float drenarVida = 0.5f;
 
-    //Poderes
-    public GameObject[] poder;
-    public bool[] poderUsado;
-    public float[] poderResp;
-    public ParticleSystem[] particulaPoder;
-
-    public GameObject rabbitClone;
+    public float vida;
+    public float vidaMax = 10;
+    public Image barHP;
+    [Range(0, 1)]
+    public float barra;
 
     void Start()
     {
-        for(int i = 0; i < poderUsado.Length; i++)
-        {
-            poderUsado[i] = false;
-        }
+        vida = vidaMax;
         agent = GetComponent<NavMeshAgent>();
         destino = transform.position;
     }
@@ -34,7 +31,29 @@ public class Player : MonoBehaviour
     {
         Mover();
         Atacar();
-        Poderes();
+        LifeTimer();
+        BarraHP();
+    }
+
+    public void LifeTimer()
+    {
+        drenarVida -= Time.deltaTime;
+        if(drenarVida <= 0)
+        {
+            drenarVida = 0.5f;
+            vida--;
+        }
+
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void BarraHP()
+    {
+        barra = 1 / (vidaMax / vida);
+        barHP.rectTransform.localScale = new(barra, 1, 1);
     }
 
     void Mover()
@@ -46,7 +65,7 @@ public class Player : MonoBehaviour
             Vector3 mousepoint = Input.mousePosition;
             Ray castPoint = Camera.main.ScreenPointToRay(mousepoint);
             RaycastHit hit;
-            if(Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
                 destino = hit.point;
                 Debug.Log(destino);
@@ -80,12 +99,12 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(inimigo != null)
+        if (inimigo != null)
         {
             destino = inimigo.transform.position;
             agent.SetDestination(destino);
 
-            if(Vector3.Distance(transform.position, destino) < 3)
+            if (Vector3.Distance(transform.position, destino) < 3)
             {
                 GetComponent<Animator>().SetBool("Atacando", true);
                 transform.LookAt(destino);
@@ -96,54 +115,7 @@ public class Player : MonoBehaviour
             GetComponent<Animator>().SetBool("Atacando", false);
         }
 
-        
-    }
 
-    public void Poderes()
-    {
-        //Poder 1
-        if(poderUsado[0] == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                poder[0].SetActive(true);
-                particulaPoder[0].Play();
-                poderUsado[0] = true;
-            }
-        }
-        else
-        {
-            poderResp[0] += Time.deltaTime;
-            if(poderResp[0] >= 4)
-            {
-                poder[0].SetActive(false);
-                particulaPoder[0].Stop();
-            }
-            if(poderResp[0] >= 10)
-            {
-                poderResp[0] = 0;
-                poderUsado[0] = false;
-            }
-        }
-
-        //Poder 2
-        if (poderUsado[1] == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                Instantiate(rabbitClone, transform.position, Quaternion.identity);
-                poderUsado[1] = true;
-            }
-        }
-        else
-        {
-            poderResp[1] += Time.deltaTime;
-            if (poderResp[1] >= 10)
-            {
-                poderResp[1] = 0;
-                poderUsado[1] = false;
-            }
-        }
     }
 
     public void AtivarAtk()
