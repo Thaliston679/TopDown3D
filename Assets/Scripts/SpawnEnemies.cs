@@ -6,8 +6,11 @@ public class SpawnEnemies : MonoBehaviour
 {
     private float contaTempoOnda;
     public float tempoOnda = 15;
-    public int maxInimigosOnda;
+    public int inimigosOnda;
     public int onda = 1;
+    public int maxOndaLevel;
+    public int fase;
+    public Transform[] spawnPosition;
 
     public GameObject enemie;
 
@@ -28,20 +31,29 @@ public class SpawnEnemies : MonoBehaviour
 
         if(contaTempoOnda >= tempoOnda)
         {
-            RandomSpawnEnemies();
+            GeradorDeInimigos();
             onda++;
             contaTempoOnda = 0;
-            maxInimigosOnda++;
+            inimigosOnda++;
         }
     }
 
-    public void RandomSpawnEnemies()
+    public void GeradorDeInimigos()
     {
-        int rand = Random.Range(1, maxInimigosOnda);
-
-        for(int i = 1; i <= rand; i++)
+        for(int i = 1; i <= inimigosOnda; i++)
         {
             Instantiate(enemie, transform.position, Quaternion.identity);
+        }
+    }
+
+    public void ChecagemDeOndasPorLevel()
+    {
+        switch (fase)
+        {
+            case 1:
+
+                break;
+
         }
     }
 
