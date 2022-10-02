@@ -9,6 +9,7 @@ TagManager:
   - AreaAtkContinuo
   - SpawnEnemies
   - HP
+  - AreaAtkInimigo
   layers:
   - Default
   - TransparentFX

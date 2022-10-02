@@ -5030,6 +5030,10 @@ MonoBehaviour:
   inimigo: {fileID: 0}
   atacando: 0
   areaAtk: {fileID: 1335223048}
+  vida: 0
+  vidaMax: 50
+  barHP: {fileID: 26034812179942200}
+  barra: 0
   poder:
   - {fileID: 1599739142}
   poderUsado: 0000

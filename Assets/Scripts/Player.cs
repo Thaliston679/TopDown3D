@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Player : MonoBehaviour
     public GameObject inimigo;
     public bool atacando = false;
     public GameObject areaAtk;
+
+    public float vida;
+    public float vidaMax;
+    public Image barHP;
+    [Range(0, 1)]
+    public float barra;
 
     //Poderes
     public GameObject[] poder;
@@ -27,6 +34,7 @@ public class Player : MonoBehaviour
         }
         agent = GetComponent<NavMeshAgent>();
         destino = transform.position;
+        vida = vidaMax;
     }
 
     // Update is called once per frame
@@ -35,6 +43,13 @@ public class Player : MonoBehaviour
         Mover();
         Atacar();
         Poderes();
+        BarraHP();
+    }
+
+    public void BarraHP()
+    {
+        barra = 1 / (vidaMax / vida);
+        barHP.rectTransform.localScale = new(barra, 1, 1);
     }
 
     void Mover()
@@ -154,5 +169,18 @@ public class Player : MonoBehaviour
     public void DesativarAtk()
     {
         areaAtk.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("AreaAtkInimigo"))
+        {
+            vida--;
+            if (vida <= 0)
+            {
+                ControlaCena controlaCena = GameObject.FindGameObjectWithTag("GameController").GetComponent<ControlaCena>();
+                controlaCena.Cena(5);
+            }
+        }
     }
 }
