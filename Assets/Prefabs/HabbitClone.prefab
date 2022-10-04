@@ -253,6 +253,7 @@ MonoBehaviour:
   vidaMax: 10
   barHP: {fileID: 4825839492380858359}
   barra: 0
+  particleDestroy: {fileID: 5145368665894224478, guid: 2ba8ce651e7adbc459002c5c8a02525f, type: 3}
 --- !u!1 &5274232680135542833
 GameObject:
   m_ObjectHideFlags: 0

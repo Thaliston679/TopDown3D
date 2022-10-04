@@ -10,6 +10,7 @@ TagManager:
   - SpawnEnemies
   - HP
   - AreaAtkInimigo
+  - Toca
   layers:
   - Default
   - TransparentFX

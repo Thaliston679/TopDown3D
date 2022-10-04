@@ -18,6 +18,7 @@ public class RabbitClone : MonoBehaviour
     public Image barHP;
     [Range(0, 1)]
     public float barra;
+    public GameObject particleDestroy;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class RabbitClone : MonoBehaviour
 
         if (vida <= 0)
         {
+            Instantiate(particleDestroy, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
@@ -71,6 +73,7 @@ public class RabbitClone : MonoBehaviour
                 Debug.Log(destino);
             }
         }
+        
 
         agent.SetDestination(destino);
 

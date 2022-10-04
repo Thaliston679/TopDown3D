@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class InimigoAI : MonoBehaviour
 {
     private GameObject player;
+    private GameObject toca;
+    private GameObject destino;
     private NavMeshAgent agent;
     public float vida;
     public float vidaMax;
@@ -17,6 +19,7 @@ public class InimigoAI : MonoBehaviour
     public bool levarDano = true;
     public float tempoInvulneravel;
     public GerenciadorJogo GJ;
+    public GameObject areaAtk;
 
     public GameObject particleDestroy;
     void Start()
@@ -24,15 +27,52 @@ public class InimigoAI : MonoBehaviour
         vida = vidaMax;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+        toca = GameObject.FindGameObjectWithTag("Toca");
         GJ = GameObject.FindGameObjectWithTag("GameController").GetComponent<GerenciadorJogo>();
+        destino = toca;
+
+        agent.SetDestination(toca.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        if (Vector3.Distance(transform.position, player.transform.position) < 5) destino = player;
+        else destino = toca;
+
+        if (destino == player)
+        {
+            agent.SetDestination(player.transform.position);
+        }
+        if(destino == toca)
+        {
+            agent.SetDestination(toca.transform.position);
+        }
+
         BarraHP();
         PodeLevarDano();
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 3)
+        {
+            GetComponent<Animator>().SetBool("Atacando", true);
+            transform.LookAt(player.transform.position);
+        }
+
+        AnimationControl();
+    }
+
+    void AnimationControl() 
+    {
+        if (Vector3.Distance(transform.position, destino.transform.position) <= 2)
+        {
+            GetComponent<Animator>().SetBool("Andando", false);
+            GetComponent<Animator>().SetBool("Atacando", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("Andando", true);
+            GetComponent<Animator>().SetBool("Atacando", false);
+        }
     }
 
     public void BarraHP()
@@ -83,5 +123,15 @@ public class InimigoAI : MonoBehaviour
             levarDano = true;
             tempoInvulneravel = 0;
         }
+    }
+
+    public void AtivarAtk()
+    {
+        areaAtk.SetActive(true);
+    }
+
+    public void DesativarAtk()
+    {
+        areaAtk.SetActive(false);
     }
 }
