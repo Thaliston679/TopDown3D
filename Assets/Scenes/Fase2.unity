@@ -230,6 +230,10 @@ MonoBehaviour:
   inimigo: {fileID: 0}
   atacando: 0
   areaAtk: {fileID: 1335223048}
+  vida: 0
+  vidaMax: 0
+  barHP: {fileID: 0}
+  barra: 0
   poder: []
   poderUsado: 
   poderResp: []
@@ -967,6 +971,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10.000002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &811072752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4796822814839725397, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_Name
+      value: SoundTrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 68.60201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.420488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 126.73257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796822814839725398, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 890f89554f3496f4fbac3f843c74fbc1, type: 3}
 --- !u!4 &906656908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2115835697, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
@@ -1870,6 +1931,10 @@ MonoBehaviour:
   inimigo: {fileID: 0}
   atacando: 0
   areaAtk: {fileID: 1428048958}
+  vida: 0
+  vidaMax: 0
+  barHP: {fileID: 0}
+  barra: 0
   poder: []
   poderUsado: 
   poderResp: []
