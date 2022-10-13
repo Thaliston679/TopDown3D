@@ -13,6 +13,6 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0.025f, 0, Space.World);
+        transform.Rotate(0, 0.05f, 0, Space.World);
     }
 }
