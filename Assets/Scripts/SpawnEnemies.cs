@@ -49,9 +49,11 @@ public class SpawnEnemies : MonoBehaviour
         for (int i = 1; i < inimigosOnda; i++)
         {
             Transform spawnRand = spawnPosition[Random.Range(0, spawnPosition.Length)];
-            GameObject enemie = RandomizadorInimigo();
+            int rand = Random.Range(0, enemies.Length);
+            GameObject enemie = enemies[rand];
+            //GameObject enemie = RandomizadorInimigo();
             Instantiate(enemie, spawnRand.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2.5f);
         }
     }
 
@@ -59,7 +61,9 @@ public class SpawnEnemies : MonoBehaviour
     {
         for(int i = 1; i <= inimigosOnda; i++)
         {
-            GameObject enemie = RandomizadorInimigo();
+            int rand = Random.Range(0, enemies.Length);
+            GameObject enemie = enemies[rand];
+            //GameObject enemie = RandomizadorInimigo();
             GJ.inimigosTotais++;
             Instantiate(enemie, transform.position, Quaternion.identity);
         }

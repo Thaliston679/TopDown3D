@@ -78,7 +78,8 @@ public class InimigoAI : MonoBehaviour
     public void BarraHP()
     {
         barra = 1 / (vidaMax/vida);
-        barHP.rectTransform.localScale = new(barra, 1, 1);
+        barHP.fillAmount = barra;
+        //barHP.rectTransform.localScale = new(barra, 1, 1);
     }
     
     private void OnTriggerEnter(Collider other)
