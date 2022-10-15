@@ -7364,10 +7364,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd38137bc0efeb34097865c04bbe2a28, type: 3}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_FillOrigin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 26034812179942200, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 538370556586270313, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_Name
       value: HabbitPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2959604658486438748, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959604658486438748, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd38137bc0efeb34097865c04bbe2a28, type: 3}
     - target: {fileID: 4003439510990696952, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_Camera
       value: 
@@ -7415,6 +7451,38 @@ PrefabInstance:
     - target: {fileID: 7367100738217245761, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.7566106
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.56442803
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.2505553
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.43800002
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.017684639
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.0028238297
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.019973516
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037562966314200408, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0021414757
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
@@ -10035,7 +10103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2115835698, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: tempoOnda
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2115835698, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: inimigosOnda
