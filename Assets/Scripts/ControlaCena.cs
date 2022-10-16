@@ -37,4 +37,9 @@ public class ControlaCena : MonoBehaviour
     {
         PlayerPrefs.SetInt("Fase", PlayerPrefs.GetInt("Fase") + 1);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -140,7 +140,6 @@ public class Player : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("Atacando", false);
         }
-
         
     }
 

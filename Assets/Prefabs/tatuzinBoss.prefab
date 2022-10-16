@@ -48,7 +48,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2.2
-  m_Speed: 1.75
+  m_Speed: 1.25
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 0
-  vidaMax: 20
+  vidaMax: 75
   barHP: {fileID: 2326962523397498881}
   barra: 0
   levarDano: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
   GJ: {fileID: 0}
   areaAtk: {fileID: 3156861412653057336}
   distAtk: 5
-  particleDestroy: {fileID: 5145368665894224478, guid: f3b627bb3c3343343acb28849ae78bd9, type: 3}
+  particleDestroy: {fileID: 5145368665894224478, guid: b47ac89f5d9e91a4faab7b869ecff54f, type: 3}
 --- !u!95 &8257812421678541357
 Animator:
   serializedVersion: 4

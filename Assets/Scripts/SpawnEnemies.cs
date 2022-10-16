@@ -12,7 +12,7 @@ public class SpawnEnemies : MonoBehaviour
     public int fase;
     public Transform[] spawnPosition;
     public GameObject[] enemies;
-
+    public GameObject bossGO;
     public GerenciadorJogo GJ;
 
     private void Start()
@@ -42,6 +42,7 @@ public class SpawnEnemies : MonoBehaviour
             onda++;
             contaTempoOnda = 0;
             inimigosOnda++;
+            RandomizadorInimigoBoss();
         }
     }
     /// <summary>
@@ -97,22 +98,12 @@ public class SpawnEnemies : MonoBehaviour
         }
     }
 
-    public GameObject RandomizadorInimigo()
+    public void RandomizadorInimigoBoss()
     {
-        if(onda > 20)
+        if(onda >= 15)
         {
-            int rand = Random.Range(0, 3);
-            return enemies[rand];
-        }
-        else if(onda > 10)
-        {
-            int rand = Random.Range(0, 2);
-            return enemies[rand];
-        }
-        else
-        {
-            int rand = Random.Range(0, 1);
-            return enemies[rand];
+            Transform spawnRand = spawnPosition[Random.Range(0, spawnPosition.Length)];
+            Instantiate(bossGO, spawnRand.position, Quaternion.identity);
         }
     }
 

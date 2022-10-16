@@ -8,24 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainCena.unity
     guid: 09e74240dc5dcdf4ba13fd152f8841bd
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Fase1.unity
-    guid: c28bd21f65fee7640b03242e0511d11b
+    guid: 289d8784ba17b3949b8587ca61a0d847
   - enabled: 1
     path: Assets/Scenes/Fase2.unity
     guid: 6c5ed22bf49855d4c97039c0821904ec
   - enabled: 1
     path: Assets/Scenes/Fase3.unity
-    guid: 01fc83ffde4118149a5fdecaef63bebd
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    guid: 1aca3f50d799dd845bf246f43eacff3e
   - enabled: 1
     path: Assets/Scenes/Vitoria.unity
     guid: 01ca7bd5fa3ff8d43b21b70b4621d983
