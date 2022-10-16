@@ -14,22 +14,27 @@ public class ControlaCena : MonoBehaviour
 
     public void IniciarJogo()
     {
-        PlayerPrefs.SetInt("Cena", 1);
+        PlayerPrefs.SetInt("Fase", 1);
         SceneManager.LoadScene(1);
     }
 
     public void ContinuarJogo()
     {
-        if(PlayerPrefs.HasKey("Cena"))
+        if(PlayerPrefs.HasKey("Fase"))
         {
-            cenaAtual = PlayerPrefs.GetInt("Cena");
+            cenaAtual = PlayerPrefs.GetInt("Fase");
         }
         else
         {
             cenaAtual = 1;
-            PlayerPrefs.SetInt("Cena", 1);
+            PlayerPrefs.SetInt("Fase", 1);
         }
 
         SceneManager.LoadScene(cenaAtual);
+    }
+
+    public void NextLevel()
+    {
+        PlayerPrefs.SetInt("Fase", PlayerPrefs.GetInt("Fase") + 1);
     }
 }

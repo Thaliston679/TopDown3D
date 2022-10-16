@@ -20,7 +20,7 @@ public class GerenciadorJogo : MonoBehaviour
     void Start()
     {
         spawnEnemies = GameObject.FindGameObjectWithTag("SpawnEnemies").GetComponent<SpawnEnemies>();
-        minhaCena = PlayerPrefs.GetInt("Cena");
+        minhaCena = PlayerPrefs.GetInt("Fase");
         controlaCena = GetComponent<ControlaCena>();
     }
 

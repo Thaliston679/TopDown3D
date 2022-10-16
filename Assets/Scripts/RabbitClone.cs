@@ -77,7 +77,7 @@ public class RabbitClone : MonoBehaviour
 
         agent.SetDestination(destino);
 
-        if (Vector3.Distance(transform.position, destino) <= 1)
+        if (Vector3.Distance(transform.position, destino) <= 0.5f)
         {
             GetComponent<Animator>().SetBool("Andando", false);
         }
@@ -107,7 +107,7 @@ public class RabbitClone : MonoBehaviour
             destino = inimigo.transform.position;
             agent.SetDestination(destino);
 
-            if (Vector3.Distance(transform.position, destino) < 3)
+            if (Vector3.Distance(transform.position, destino) < 5)
             {
                 GetComponent<Animator>().SetBool("Atacando", true);
                 transform.LookAt(destino);

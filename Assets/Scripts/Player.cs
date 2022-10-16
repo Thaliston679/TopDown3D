@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     //Poderes
     public GameObject[] poder;
+    public Image[] poderBar;
     public bool[] poderUsado;
     public float[] poderResp;
     public ParticleSystem[] particulaPoder;
@@ -44,6 +45,34 @@ public class Player : MonoBehaviour
         Atacar();
         Poderes();
         BarraHP();
+        BarraSkills();
+    }
+
+    public void BarraSkills()
+    {
+        float barSkillQ;
+        float barSkillW;
+
+        if(poderResp[0] > 0)
+        {
+            barSkillQ = poderResp[0] / 10;
+        }
+        else
+        {
+            barSkillQ = 1;
+        }
+
+        if (poderResp[1] > 0)
+        {
+            barSkillW = poderResp[1] / 10;
+        }
+        else
+        {
+            barSkillW = 1;
+        }
+
+        poderBar[0].fillAmount = barSkillQ;
+        poderBar[1].fillAmount = barSkillW;
     }
 
     public void BarraHP()
@@ -101,7 +130,7 @@ public class Player : MonoBehaviour
             destino = inimigo.transform.position;
             agent.SetDestination(destino);
 
-            if(Vector3.Distance(transform.position, destino) < 3)
+            if(Vector3.Distance(transform.position, destino) < 4)
             {
                 GetComponent<Animator>().SetBool("Atacando", true);
                 transform.LookAt(destino);
@@ -120,7 +149,7 @@ public class Player : MonoBehaviour
         //Poder 1
         if(poderUsado[0] == false)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 poder[0].SetActive(true);
                 particulaPoder[0].Play();
@@ -145,7 +174,7 @@ public class Player : MonoBehaviour
         //Poder 2
         if (poderUsado[1] == false)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 Instantiate(rabbitClone, transform.position, Quaternion.identity);
                 poderUsado[1] = true;
@@ -184,4 +213,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-}
+}//Quando maior doq zero usar variavel. Caso contrario set 1

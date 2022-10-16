@@ -80,6 +80,7 @@ MonoBehaviour:
   tempoInvulneravel: 0
   GJ: {fileID: 0}
   areaAtk: {fileID: 3156861412653057336}
+  distAtk: 5
   particleDestroy: {fileID: 5145368665894224478, guid: f3b627bb3c3343343acb28849ae78bd9, type: 3}
 --- !u!95 &8257812421678541357
 Animator:

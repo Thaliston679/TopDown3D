@@ -48,7 +48,7 @@ Animator:
   m_GameObject: {fileID: 3857658262364788785}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7ac852a526919e544a320bf6dd92adff, type: 2}
+  m_Controller: {fileID: 9100000, guid: f8c5b28d74911bc4fafca79d5d767bf5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   tempoInvulneravel: 0
   GJ: {fileID: 0}
   areaAtk: {fileID: 8206996217875896433}
+  distAtk: 2.5
   particleDestroy: {fileID: 5145368665894224478, guid: f3b627bb3c3343343acb28849ae78bd9, type: 3}
 --- !u!195 &3604225589383136951
 NavMeshAgent:
@@ -324,6 +325,22 @@ PrefabInstance:
     - target: {fileID: 1051291172434132108, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053107972553445292, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053107972553445292, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053107972553445292, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
+      propertyPath: m_Size.z
+      value: 3.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053107972553445292, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
+      propertyPath: m_Center.z
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 9138405068103375775, guid: d23f341f1ee90804b88f0c565fa482bd, type: 3}
       propertyPath: m_RootOrder

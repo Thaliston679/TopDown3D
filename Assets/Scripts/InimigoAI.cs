@@ -20,6 +20,7 @@ public class InimigoAI : MonoBehaviour
     public float tempoInvulneravel;
     public GerenciadorJogo GJ;
     public GameObject areaAtk;
+    public float distAtk;
 
     public GameObject particleDestroy;
     void Start()
@@ -37,7 +38,7 @@ public class InimigoAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 5) destino = player;
+        if (Vector3.Distance(transform.position, player.transform.position) < 7) destino = player;
         else destino = toca;
 
         if (destino == player)
@@ -52,7 +53,7 @@ public class InimigoAI : MonoBehaviour
         BarraHP();
         PodeLevarDano();
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 3)
+        if (Vector3.Distance(transform.position, player.transform.position) < distAtk)
         {
             GetComponent<Animator>().SetBool("Atacando", true);
             transform.LookAt(player.transform.position);
@@ -63,7 +64,7 @@ public class InimigoAI : MonoBehaviour
 
     void AnimationControl() 
     {
-        if (Vector3.Distance(transform.position, destino.transform.position) <= 2)
+        if (Vector3.Distance(transform.position, destino.transform.position) <= (distAtk - (distAtk / 4)))
         {
             GetComponent<Animator>().SetBool("Andando", false);
             GetComponent<Animator>().SetBool("Atacando", true);

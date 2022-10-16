@@ -15,6 +15,11 @@ public class SpawnEnemies : MonoBehaviour
 
     public GerenciadorJogo GJ;
 
+    private void Start()
+    {
+        contaTempoOnda = tempoOnda - 0.1f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +58,7 @@ public class SpawnEnemies : MonoBehaviour
             GameObject enemie = enemies[rand];
             //GameObject enemie = RandomizadorInimigo();
             Instantiate(enemie, spawnRand.position, Quaternion.identity);
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(3f);
         }
     }
 
@@ -76,9 +81,19 @@ public class SpawnEnemies : MonoBehaviour
     {
         if(onda >= maxOndaLevel && GJ.minhaCena <= 2 && GJ.minhaCena > 0 && GJ.inimigosDerrotados >= GJ.inimigosTotais)
         {
+            GJ.GetControlaCena().NextLevel();
+            GJ.GetControlaCena().Cena(4);
+            Debug.Log(PlayerPrefs.GetInt("Fase"));
+            /*
             GJ.minhaCena++;
-            PlayerPrefs.SetInt("Cena", GJ.minhaCena);
+            PlayerPrefs.SetInt("Fase", GJ.minhaCena);
             GJ.GetControlaCena().Cena(GJ.minhaCena);
+            */
+        }
+
+        if (onda >= maxOndaLevel && GJ.minhaCena == 3 && GJ.inimigosDerrotados >= GJ.inimigosTotais)
+        {
+            GJ.GetControlaCena().Cena(6);
         }
     }
 
