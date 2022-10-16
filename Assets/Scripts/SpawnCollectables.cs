@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class SpawnCollectables : MonoBehaviour
 {
-    public GameObject[] GetspawnPoints;
-    public Transform[] spawnPoints;
-    public GameObject prefabHP;
+    public GameObject[] spawnPoints;
     public float timeToSpawn;
     private float currentTimer = 0;
 
-    public bool[] areaOcupada = { false, false, false, false, false, false, false, false, false, false, false, false };
+    public bool[] areaOcupada = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
     void Start()
     {
-        DeletInitialPrefabs();
+        DesactiveInitialPrefabs();
     }
 
     // Update is called once per frame
@@ -34,19 +32,18 @@ public class SpawnCollectables : MonoBehaviour
         }
     }
 
-    public void DeletInitialPrefabs()
+    public void DesactiveInitialPrefabs()
     {
         for(int i = 0; i < spawnPoints.Length; i++)
         {
-            spawnPoints[i] = GetspawnPoints[i].transform;
-            Destroy(GetspawnPoints[i]);
+            spawnPoints[i].SetActive(false);
         }
     }
 
     public void SpawnNewHP(int rand)
     {
         areaOcupada[rand] = true;
-        Instantiate(prefabHP, spawnPoints[rand].position, Quaternion.identity);
+        spawnPoints[rand].SetActive(true);
     }
 
     void CheckRandomizerPosition()
@@ -54,5 +51,16 @@ public class SpawnCollectables : MonoBehaviour
         int rand = Random.Range(0, spawnPoints.Length);
         if (areaOcupada[rand] == false) SpawnNewHP(rand);
         else CheckRandomizerPosition();
+    }
+
+    public void CheckCollect()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            if (!spawnPoints[i].activeSelf)
+            {
+                areaOcupada[i] = false;
+            }
+        }
     }
 }

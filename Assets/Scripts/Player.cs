@@ -212,5 +212,17 @@ public class Player : MonoBehaviour
                 controlaCena.Cena(5);
             }
         }
+
+        if (other.gameObject.CompareTag("HP"))
+        {
+            if(vida < vidaMax)
+            {
+                other.gameObject.SetActive(false);
+                SpawnCollectables spawnHP = GameObject.FindGameObjectWithTag("spawnHP").GetComponent<SpawnCollectables>();
+                spawnHP.CheckCollect();
+                vida += 5;
+                if (vida > vidaMax) vida = vidaMax;
+            }
+        }
     }
-}//Quando maior doq zero usar variavel. Caso contrario set 1
+}

@@ -11,6 +11,7 @@ TagManager:
   - HP
   - AreaAtkInimigo
   - Toca
+  - spawnHP
   layers:
   - Default
   - TransparentFX
