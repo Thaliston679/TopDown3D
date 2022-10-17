@@ -42,4 +42,9 @@ public class ControlaCena : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void FaseSelected(int i)
+    {
+        PlayerPrefs.SetInt("Fase", i);
+    }
 }

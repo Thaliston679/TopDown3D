@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
             if(Physics.Raycast(castPoint, out hit, Mathf.Infinity))
             {
                 destino = hit.point;
-                Debug.Log(destino);
+                //Debug.Log(destino);
             }
         }
 

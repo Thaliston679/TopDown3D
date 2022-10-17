@@ -96,6 +96,7 @@ public class InimigoAI : MonoBehaviour
                 if(!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
+                Debug.Log("Inimigo morto" + GJ.inimigosDerrotados.ToString());
             }
         }
     }
@@ -113,6 +114,7 @@ public class InimigoAI : MonoBehaviour
                 if (!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
+                Debug.Log("Inimigo morto com skill" + GJ.inimigosDerrotados.ToString());
             }
         }
     }

@@ -28,6 +28,7 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(GJ.inimigosDerrotados.ToString() + " " + GJ.inimigosTotais.ToString());
         if (GJ.inimigosDerrotados >= GJ.inimigosTotais) InstaciaNovaOnda();
         ContadorTempoOnda();
         ChecagemDeOndasPorLevel();
@@ -37,6 +38,7 @@ public class SpawnEnemies : MonoBehaviour
     {
         if(GJ.inimigosDerrotados >= GJ.inimigosTotais)
         {
+            Debug.Log(contaTempoOnda + "T");
             if (!ondaPanel.activeSelf) ondaPanel.SetActive(true);
             contaTempoOnda += Time.deltaTime;
             ondaTimer.text = "Tempo até a próxima onda: " + ((int)contaTempoOndaNaTela).ToString();
