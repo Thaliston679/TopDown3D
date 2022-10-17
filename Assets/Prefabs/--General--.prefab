@@ -87,6 +87,7 @@ MonoBehaviour:
   - {fileID: 538370556586270313, guid: 9664b1c0e21375f40ad5c7fa0181aac0, type: 3}
   - {fileID: 4291959805003283073, guid: 2096467a192163a449910974e8aa5ae4, type: 3}
   - {fileID: 4848133825745972473, guid: c9cda32efe5357e4ca2289e29d0c4245, type: 3}
+  bossGO: {fileID: 0}
   GJ: {fileID: 3353711210393082750}
 --- !u!1 &6256941555557296072
 GameObject:
@@ -365,6 +366,22 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7256253159212544913, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256253159212544913, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd38137bc0efeb34097865c04bbe2a28, type: 3}
+    - target: {fileID: 7256253159212544913, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256253159212544913, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7256253159212544918, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -379,6 +396,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 03db722aae189d9478f5a8efe999bc17, type: 2}
     - target: {fileID: 7256253159380571302, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256253159735616092, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256253159735616092, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd38137bc0efeb34097865c04bbe2a28, type: 3}
+    - target: {fileID: 7256253159735616092, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7256253159735616093, guid: ca7f090a6f5900542af33b68cb06c81d, type: 3}
