@@ -40,7 +40,7 @@ public class InimigoAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 7) destino = player;
+        if (Vector3.Distance(transform.position, player.transform.position) < 8) destino = player;
         else destino = toca;
 
         if (destino == player)

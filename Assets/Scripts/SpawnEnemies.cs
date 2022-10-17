@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnEnemies : MonoBehaviour
 {
     private float contaTempoOnda;
+    public float contaTempoOndaNaTela = 0;
     public float tempoOnda = 15;
     public int inimigosOnda;
     public int onda = 1;
@@ -14,10 +16,13 @@ public class SpawnEnemies : MonoBehaviour
     public GameObject[] enemies;
     public GameObject bossGO;
     public GerenciadorJogo GJ;
+    public GameObject ondaPanel;
+    public TextMeshProUGUI ondaTimer;
 
     private void Start()
     {
         contaTempoOnda = tempoOnda - 0.1f;
+        contaTempoOndaNaTela = 0.1f;
     }
 
     // Update is called once per frame
@@ -30,7 +35,13 @@ public class SpawnEnemies : MonoBehaviour
 
     public void ContadorTempoOnda()
     {
-        contaTempoOnda += Time.deltaTime;
+        if(GJ.inimigosDerrotados >= GJ.inimigosTotais)
+        {
+            if (!ondaPanel.activeSelf) ondaPanel.SetActive(true);
+            contaTempoOnda += Time.deltaTime;
+            ondaTimer.text = "Tempo até a próxima onda: " + ((int)contaTempoOndaNaTela).ToString();
+            contaTempoOndaNaTela -= Time.deltaTime;
+        }
     }
 
     public void InstaciaNovaOnda()
@@ -41,9 +52,17 @@ public class SpawnEnemies : MonoBehaviour
             StartCoroutine(GeradorDeInimigosComTimer());
             onda++;
             contaTempoOnda = 0;
+            ondaPanel.SetActive(false);
+            contaTempoOndaNaTela = tempoOnda;
             inimigosOnda++;
             RandomizadorInimigoBoss();
         }
+    }
+
+    public void PularEsperaEntreOndas()
+    {
+        contaTempoOnda = tempoOnda;
+        contaTempoOndaNaTela = 0;
     }
     /// <summary>
     /// ////////////////////////////////////////////////////////////////////////////////
