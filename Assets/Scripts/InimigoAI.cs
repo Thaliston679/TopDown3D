@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InimigoAI : MonoBehaviour
 {
+    [SerializeField]
+    private bool isBoss;
     private GameObject player;
     private GameObject toca;
     private GameObject destino;
@@ -90,7 +92,8 @@ public class InimigoAI : MonoBehaviour
             vida--;
             if(vida <= 0)
             {
-                GJ.inimigosDerrotados++;
+                CheckBossDeath();
+                if(!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
@@ -106,9 +109,29 @@ public class InimigoAI : MonoBehaviour
             vida--;
             if (vida <= 0)
             {
-                GJ.inimigosDerrotados++;
+                CheckBossDeath();
+                if (!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
+            }
+        }
+    }
+
+    void CheckBossDeath()
+    {
+        if (isBoss)
+        {
+            if (PlayerPrefs.HasKey("EndGame"))
+            {
+                if (PlayerPrefs.GetInt("EndGame") == 1)
+                {
+                    GJ.GetControlaCena().Cena(6);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("BossDefeated", 1);
+                Debug.Log("Chefe elimidado. Aguardando limpar inimigos...");
             }
         }
     }

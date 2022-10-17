@@ -94,7 +94,18 @@ public class SpawnEnemies : MonoBehaviour
 
         if (onda >= maxOndaLevel && GJ.minhaCena == 3 && GJ.inimigosDerrotados >= GJ.inimigosTotais)
         {
-            GJ.GetControlaCena().Cena(6);
+            if (PlayerPrefs.HasKey("BossDefeated"))
+            {
+                if(PlayerPrefs.GetInt("BossDefeated")  == 1)
+                {
+                    GJ.GetControlaCena().Cena(6);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("EndGame", 1);
+                Debug.Log("Inimigos elimidados. Aguardando matar chefe...");
+            }
         }
     }
 

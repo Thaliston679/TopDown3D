@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea676edbba2a39049aac63f3d6bfd772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 1
   vida: 0
   vidaMax: 75
   barHP: {fileID: 2326962523397498881}
