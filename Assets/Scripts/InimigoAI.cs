@@ -23,6 +23,7 @@ public class InimigoAI : MonoBehaviour
     public GerenciadorJogo GJ;
     public GameObject areaAtk;
     public float distAtk;
+    private bool morte = false;
 
     public GameObject particleDestroy;
     void Start()
@@ -62,6 +63,17 @@ public class InimigoAI : MonoBehaviour
         }
 
         AnimationControl();
+
+        //CheckDeath
+        if (vida <= 0 && !morte)
+        {
+            morte = true;
+            CheckBossDeath();
+            if (!isBoss) GJ.inimigosDerrotados++;
+            Instantiate(particleDestroy, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            Debug.Log("Inimigo morto" + GJ.inimigosDerrotados.ToString());
+        }
     }
 
     void AnimationControl() 
@@ -90,14 +102,15 @@ public class InimigoAI : MonoBehaviour
         if (other.gameObject.CompareTag("AreaAtk"))
         {
             vida--;
-            if(vida <= 0)
+
+            /*if(vida <= 0)
             {
                 CheckBossDeath();
                 if(!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
                 Debug.Log("Inimigo morto" + GJ.inimigosDerrotados.ToString());
-            }
+            }*/
         }
     }
     
@@ -108,14 +121,15 @@ public class InimigoAI : MonoBehaviour
         {
             levarDano = false;
             vida--;
-            if (vida <= 0)
+
+            /*if (vida <= 0)
             {
                 CheckBossDeath();
                 if (!isBoss) GJ.inimigosDerrotados++;
                 Instantiate(particleDestroy, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
                 Debug.Log("Inimigo morto com skill" + GJ.inimigosDerrotados.ToString());
-            }
+            }*/
         }
     }
 

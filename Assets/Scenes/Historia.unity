@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textGO: {fileID: 1641589473}
-  timeDelayWrite: 0.05
+  timeDelayWrite: 0.045
   texto: "Um Coelho Guerreiro que vagava pela floresta em busca das lend\xE1rias
     cenouras m\xE1gicas foi pego por um tempestade que o obrigou a buscar abrigo
     em uma toca qualquer pelo caminho. \nVendo que a tempestade parecia n\xE3o acabar

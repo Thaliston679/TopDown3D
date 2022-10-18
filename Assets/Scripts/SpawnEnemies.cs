@@ -29,9 +29,9 @@ public class SpawnEnemies : MonoBehaviour
     void Update()
     {
         Debug.Log(GJ.inimigosDerrotados.ToString() + " " + GJ.inimigosTotais.ToString());
+        ChecagemDeOndasPorLevel();
         if (GJ.inimigosDerrotados >= GJ.inimigosTotais) InstaciaNovaOnda();
         ContadorTempoOnda();
-        ChecagemDeOndasPorLevel();
     }
 
     public void ContadorTempoOnda()
@@ -51,7 +51,7 @@ public class SpawnEnemies : MonoBehaviour
         if (contaTempoOnda >= tempoOnda && onda < maxOndaLevel)
         {
             GJ.inimigosTotais += inimigosOnda;
-            StartCoroutine(GeradorDeInimigosComTimer());
+            StartCoroutine(GeradorDeInimigosComTimer(inimigosOnda+1));
             onda++;
             contaTempoOnda = 0;
             ondaPanel.SetActive(false);
@@ -71,9 +71,9 @@ public class SpawnEnemies : MonoBehaviour
     /// </summary>
     /// 
 
-    IEnumerator GeradorDeInimigosComTimer()
+    IEnumerator GeradorDeInimigosComTimer(int currentInimigosOnda)
     {
-        for (int i = 1; i < inimigosOnda; i++)
+        for (int i = 1; i < currentInimigosOnda; i++)
         {
             Transform spawnRand = spawnPosition[Random.Range(0, spawnPosition.Length)];
             int rand = Random.Range(0, enemies.Length);
