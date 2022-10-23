@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.57217956, g: 0.78577745, b: 0.91023254, a: 1}
+  m_IndirectSpecularColor: {r: 0.5717346, g: 0.78547513, b: 0.90961516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -35609,6 +35609,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+--- !u!114 &1604408252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3059407800413731222, guid: 397bd64d811c69741bdc7f3bd76f4aaf, type: 3}
+  m_PrefabInstance: {fileID: 1604408251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f4bf14cfdfecb4f81ea3796d94d1d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1608593425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48659,6 +48670,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 531775532075191022, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750617700837240687, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1604408252}
+    - target: {fileID: 2750617700837240687, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkillW
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750617700837240687, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750617700837240687, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3360636855401326682, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: m_characterSpacing
       value: 5
@@ -48667,9 +48698,29 @@ PrefabInstance:
       propertyPath: m_characterSpacing
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 4450418919892689470, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+    - target: {fileID: 3502034234659872463, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1604408252}
+    - target: {fileID: 3502034234659872463, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkillQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502034234659872463, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502034234659872463, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567067952439400400, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450418919892689470, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4560474488486080309, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: m_fontAsset
@@ -48679,6 +48730,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -4986376630771184496, guid: 03db722aae189d9478f5a8efe999bc17, type: 2}
+    - target: {fileID: 7030147812841305588, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8609189271005381124, guid: 81dbd5e7a06244e47b2861e5e05d0cbb, type: 3}
       propertyPath: m_fontAsset
       value: 

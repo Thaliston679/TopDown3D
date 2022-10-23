@@ -15,6 +15,7 @@ public class GerenciadorJogo : MonoBehaviour
     public GameObject UIondas;
     public TextMeshProUGUI fps;
     private float fpsTimer = 0.25f;
+    public GameObject pauseB;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,10 @@ public class GerenciadorJogo : MonoBehaviour
         spawnEnemies = GameObject.FindGameObjectWithTag("SpawnEnemies").GetComponent<SpawnEnemies>();
         minhaCena = PlayerPrefs.GetInt("Fase");
         controlaCena = GetComponent<ControlaCena>();
+
+#if PLATFORM_ANDROID
+        pauseB.SetActive(true);
+#endif
     }
 
     // Update is called once per frame
