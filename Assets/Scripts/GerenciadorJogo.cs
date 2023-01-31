@@ -23,10 +23,11 @@ public class GerenciadorJogo : MonoBehaviour
         spawnEnemies = GameObject.FindGameObjectWithTag("SpawnEnemies").GetComponent<SpawnEnemies>();
         minhaCena = PlayerPrefs.GetInt("Fase");
         controlaCena = GetComponent<ControlaCena>();
-
+        /*
 #if PLATFORM_ANDROID
         pauseB.SetActive(true);
 #endif
+        */
     }
 
     // Update is called once per frame

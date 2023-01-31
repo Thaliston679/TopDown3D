@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         Mover();
         Atacar();
         Poderes();
-        PoderesMobile();
+        //PoderesMobile();
         BarraHP();
         BarraSkills();
     }
